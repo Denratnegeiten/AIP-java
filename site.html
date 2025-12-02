@@ -7,18 +7,14 @@
 </head>
 <body>
 
-    <div id="first">
-        <p>Первый абзац</p>
-    </div>
-    <div id="second">
-        <p>Второй абзац</p>
-    </div>
+    <div id="elem">txt<b>tag</b><!--com-->txt<b>tag</b><!--com--></div>
 
     <script>
-        let secondDiv = document.querySelector('#second');
+        let elem = document.querySelector('#elem');
 
-        console.log('previousSibling:', secondDiv.previousSibling); // Узел между div (возможно, текстовый узел)
-        console.log('previousElementSibling:', secondDiv.previousElementSibling); // Тег <div id="first">
+        for (let node of elem.childNodes) {
+            console.log(node);
+        }
     </script>
 
 </body>
