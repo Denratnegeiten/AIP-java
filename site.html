@@ -6,20 +6,17 @@
 </head>
 <body>
 
-<div>1</div>
-<div>2</div>
-<div>3</div>
-<div>4</div>
-<div>5</div>
+<a id="link" href="https://github.com/ohneRE-L/Js_project">Мой github репозиторий</a>
+<button id="button">Добавить ссылку</button>
 
 <script>
-    let divs = document.querySelectorAll('div');
+    let link = document.querySelector('#link');
+    let button = document.querySelector('#button');
 
-    for (let div of divs) {
-        div.addEventListener('click', function() {
-            this.textContent++;
-        });
-    }
+    button.addEventListener('click', function addHref() {
+        link.textContent += ` (${link.href})`;
+        button.removeEventListener('click', addHref);
+    });
 </script>
 
 </body>
