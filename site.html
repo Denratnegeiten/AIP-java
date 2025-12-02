@@ -5,43 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>text</title>
     <style>
-        .colored {
-            color: red; /* Красный цвет для абзаца */
-        }
-
-        .bold {
-            font-weight: bold; /* Жирный текст */
-        }
-
-        .strikethrough {
-            text-decoration: line-through; /* Перечеркнутый текст */
+        .red {
+            color: red; /* Красный цвет для текста */
         }
     </style>
 </head>
 <body>
 
-    <p id="myParagraph">Этот абзац будет изменяться</p>
-    <button id="strikeButton">Перечеркнуть</button>
-    <button id="boldButton">Сделать жирным</button>
-    <button id="redButton">Сделать красным</button>
+    <ul id="elem">
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+    </ul>
 
     <script>
-        const paragraph = document.getElementById('myParagraph');
-        const strikeButton = document.getElementById('strikeButton');
-        const boldButton = document.getElementById('boldButton');
-        const redButton = document.getElementById('redButton');
+        const elem = document.getElementById('elem');
 
-        strikeButton.addEventListener('click', function() {
-            paragraph.classList.toggle('strikethrough'); // Переключение класса 'strikethrough'
-        });
+        // Задача 1: Найдите первого потомка и сделайте его текст красного цвета.
+        const firstChild = elem.firstElementChild;
+        firstChild.classList.add('red');
 
-        boldButton.addEventListener('click', function() {
-            paragraph.classList.toggle('bold'); // Переключение класса 'bold'
-        });
+        // Задача 2: Найдите последнего потомка и сделайте его текст красного цвета.
+        const lastChild = elem.lastElementChild;
+        lastChild.classList.add('red');
 
-        redButton.addEventListener('click', function() {
-            paragraph.classList.toggle('colored'); // Переключение класса 'colored'
-        });
+        // Задача 3: Найдите всех потомков и добавьте им в конец текст '!'.
+        const children = elem.children;
+        for (let child of children) {
+            child.textContent += '!';
+        }
     </script>
 
 </body>
