@@ -1,24 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>text</title>
+    <style>
+        .colored {
+            color: red; /* Красный цвет для абзаца */
+        }
+
+        .bold {
+            font-weight: bold; /* Жирный текст */
+        }
+
+        .strikethrough {
+            text-decoration: line-through; /* Перечеркнутый текст */
+        }
+    </style>
 </head>
 <body>
 
-    <div id="myDiv">Пример дива с текстом.</div>
-    <button id="myButton">Стилизация дива</button>
+    <p id="myParagraph">Этот абзац будет изменяться</p>
+    <button id="strikeButton">Перечеркнуть</button>
+    <button id="boldButton">Сделать жирным</button>
+    <button id="redButton">Сделать красным</button>
 
     <script>
-        const myDiv = document.getElementById('myDiv');
-        const myButton = document.getElementById('myButton');
+        const paragraph = document.getElementById('myParagraph');
+        const strikeButton = document.getElementById('strikeButton');
+        const boldButton = document.getElementById('boldButton');
+        const redButton = document.getElementById('redButton');
 
-        myButton.addEventListener('click', function() {
-            // Устанавливаем стили к диву
-            myDiv.style.fontSize = '20px';         // Размер шрифта
-            myDiv.style.borderTop = '2px solid black'; // Верхняя граница
-            myDiv.style.backgroundColor = 'lightgreen'; // Фоновый цвет
+        strikeButton.addEventListener('click', function() {
+            paragraph.classList.toggle('strikethrough'); // Переключение класса 'strikethrough'
+        });
+
+        boldButton.addEventListener('click', function() {
+            paragraph.classList.toggle('bold'); // Переключение класса 'bold'
+        });
+
+        redButton.addEventListener('click', function() {
+            paragraph.classList.toggle('colored'); // Переключение класса 'colored'
         });
     </script>
 
