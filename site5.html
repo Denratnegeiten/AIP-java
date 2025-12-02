@@ -10,12 +10,13 @@
 <p>1</p>
 <p>2</p>
 <p>3</p>
-
 <script>
     let elems = document.querySelectorAll('p');
-    for (let elem of elems) {
-        elem.textContent += '!';
-    }
+    elems.forEach(elem => {
+        elem.addEventListener('click', function() {
+            this.textContent += '!';
+        });
+    });
 </script>
 
 </body>

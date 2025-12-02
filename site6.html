@@ -7,15 +7,19 @@
 </head>
 <body>
 
-<p>1</p>
-<p>2</p>
-<p>3</p>
-
+<p>text1</p>
+<p>text2</p>
+<p>text3</p>
+<button>click</button>
 <script>
+    let button = document.querySelector('button');
     let elems = document.querySelectorAll('p');
-    for (let elem of elems) {
-        elem.textContent += '!';
-    }
+
+    button.addEventListener('click', function() {
+        elems.forEach(elem => {
+            elem.innerHTML = '<b>' + elem.innerHTML + '</b>';
+        });
+    });
 </script>
 
 </body>
