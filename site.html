@@ -6,17 +6,19 @@
 </head>
 <body>
 
-<input id="myInput" type="text">
+<p class="text">Первый абзац</p>
+<p class="text">Второй абзац</p>
+<p class="text">Третий абзац</p>
+<p class="text">Четвертый абзац</p>
+<p class="text">Пятый абзац</p>
 
 <script>
-    let input = document.querySelector('#myInput');
+    let paragraphs = document.querySelectorAll('.text');
 
-    input.addEventListener('focus', function() {
-        this.value = 1;
-    });
-
-    input.addEventListener('blur', function() {
-        this.value = 2;
+    paragraphs.forEach(function(paragraph) {
+        paragraph.addEventListener('click', function() {
+            this.textContent += '!';
+        });
     });
 </script>
 

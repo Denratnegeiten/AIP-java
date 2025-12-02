@@ -6,13 +6,15 @@
 </head>
 <body>
 
-<button id="incrementButton">1</button>
+<input class="input" type="text" value="2">
+<input class="input" type="text" value="3">
+<input class="input" type="text" value="4">
 
 <script>
-    let button = document.querySelector('#incrementButton');
-
-    button.addEventListener('click', function() {
-        this.textContent = parseInt(this.textContent) + 1;
+    document.querySelectorAll('.input').forEach(function(input) {
+        input.addEventListener('blur', function() {
+            this.value = Math.pow(this.value, 2);
+        });
     });
 </script>
 
