@@ -6,19 +6,17 @@
 </head>
 <body>
 
-<p class="text">Первый абзац</p>
-<p class="text">Второй абзац</p>
-<p class="text">Третий абзац</p>
-<p class="text">Четвертый абзац</p>
-<p class="text">Пятый абзац</p>
+<p>Первый абзац</p>
+<p>Второй абзац</p>
+<p>Третий абзац</p>
+<button id="changeText">Изменить текст</button>
 
 <script>
-    let paragraphs = document.querySelectorAll('.text');
-
-    paragraphs.forEach(function(paragraph) {
-        paragraph.addEventListener('click', function() {
-            this.textContent += '!';
-        });
+    document.getElementById('changeText').addEventListener('click', function() {
+        let paragraphs = document.querySelectorAll('p');
+        for (let paragraph of paragraphs) {
+            paragraph.textContent = 'text';
+        }
     });
 </script>
 

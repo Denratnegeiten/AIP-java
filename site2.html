@@ -6,14 +6,16 @@
 </head>
 <body>
 
-<input class="input" type="text" value="2">
-<input class="input" type="text" value="3">
-<input class="input" type="text" value="4">
+<p>Первый абзац</p>
+<p>Второй абзац</p>
+<p>Третий абзац</p>
+<button id="addNumbers">Добавить номера</button>
 
 <script>
-    document.querySelectorAll('.input').forEach(function(input) {
-        input.addEventListener('blur', function() {
-            this.value = Math.pow(this.value, 2);
+    document.getElementById('addNumbers').addEventListener('click', function() {
+        let paragraphs = document.querySelectorAll('p');
+        paragraphs.forEach((paragraph, index) => {
+            paragraph.textContent += ` ${index + 1}`;
         });
     });
 </script>
