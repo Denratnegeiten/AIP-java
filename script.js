@@ -1,8 +1,4 @@
 "use strict";
 let a;
 
-a = 10;
-alert(a);
-
-a = 20;
-alert(a);
+alert(a = 1+2+3);
