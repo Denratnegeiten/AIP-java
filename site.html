@@ -5,24 +5,27 @@
     <title>Title</title>
 </head>
 <body>
-<input id="button1" type="submit" value="button1">
-<input id="button2" type="submit" value="button2">
-
+<p id="elem1">text</p>
+<p id="elem2">text</p>
+<p id="elem3">text</p>
+<p id="elem4">text</p>
+<p id="elem5">text</p>
 <script>
-    function func1() {
-        console.log(1);
+    function func() {
+        console.log('message');
     }
 
-    function func2() {
-        console.log(2);
-    }
+    let elem1 = document.querySelector('#elem1');
+    let elem2 = document.querySelector('#elem2');
+    let elem3 = document.querySelector('#elem3');
+    let elem4 = document.querySelector('#elem4');
+    let elem5 = document.querySelector('#elem5');
 
-    let button1 = document.querySelector('#button1');
-    let button2 = document.querySelector('#button2');
-
-    button1.addEventListener('click', func1);
-    button2.addEventListener('click', func2);
+    elem1.addEventListener('click', func);
+    elem2.addEventListener('click', func);
+    elem3.addEventListener('click', func);
+    elem4.addEventListener('click', func);
+    elem5.addEventListener('click', func);
 </script>
-
 </body>
 </html>
