@@ -6,16 +6,14 @@
 </head>
 <body>
 
-<p>Первый абзац</p>
-<p>Второй абзац</p>
-<p>Третий абзац</p>
-<button id="addNumbers">Добавить номера</button>
+<p class="number">2</p>
+<p class="number">3</p>
+<p class="number">4</p>
 
 <script>
-    document.getElementById('addNumbers').addEventListener('click', function() {
-        let paragraphs = document.querySelectorAll('p');
-        paragraphs.forEach((paragraph, index) => {
-            paragraph.textContent += ` ${index + 1}`;
+    document.querySelectorAll('.number').forEach(function(paragraph) {
+        paragraph.addEventListener('click', function() {
+            this.textContent = Math.pow(Number(this.textContent), 2);
         });
     });
 </script>
