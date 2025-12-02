@@ -7,22 +7,18 @@
 </head>
 <body>
 
-    <div id="parent">
-        <p class="www">text 1</p>
-        <p class="www">text 2</p>
-        <p class="www">text 3</p>
-        <p class="ggg">text 4</p>
-        <p class="ggg">text 5</p>
-        <p class="ggg">text 6</p>
+    <div id="first">
+        <p>Первый абзац</p>
+    </div>
+    <div id="second">
+        <p>Второй абзац</p>
     </div>
 
     <script>
-        let parent = document.querySelector('#parent'); // Получаем родительский элемент
-        let elems1 = parent.querySelectorAll('.www'); // Находим элементы с классом www
-        let elems2 = parent.querySelectorAll('.ggg'); // Находим элементы с классом ggg
+        let secondDiv = document.querySelector('#second');
 
-        console.log('Элементы с классом www:', elems1); // Выводим найденные элементы в консоль
-        console.log('Элементы с классом ggg:', elems2); // Выводим найденные элементы в консоль
+        console.log('previousSibling:', secondDiv.previousSibling); // Узел между div (возможно, текстовый узел)
+        console.log('previousElementSibling:', secondDiv.previousElementSibling); // Тег <div id="first">
     </script>
 
 </body>
