@@ -6,27 +6,17 @@
     <title>JavaScript DOM Examples</title>
 </head>
 <body>
-
-<p>1</p>
-<p>2</p>
-<p>3</p>
-<button>click</button>
-<p>Сумма: <span id="sum">0</span></p>
+<input type="text" id="commaInput">
 
 <script>
-    let button = document.querySelector('button');
-    let elems = document.querySelectorAll('p');
-    let sumDisplay = document.querySelector('#sum');
+    const commaInput = document.getElementById('commaInput');
 
-    button.addEventListener('click', function() {
-        let sum = 0;
-        elems.forEach((elem, index) => {
-            if (index < elems.length - 1) {
-                sum += Number(elem.textContent);
-            }
-        });
-        sumDisplay.textContent = sum;
+    commaInput.addEventListener('blur', () => {
+        const numbers = commaInput.value.split(',').map(Number);
+        const average = numbers.reduce((a, b) => a + b, 0) / numbers.length;
+        console.log(average);
     });
 </script>
+
 </body>
 </html>

@@ -7,18 +7,17 @@
 </head>
 <body>
 
-<input id="inp1" type="number">
-<input id="inp2" type="number">
-<p id="res"></p>
-<button id="btn">click</button>
-<script>
-    let btn = document.querySelector('#btn');
-    let res = document.querySelector('#res');
-    let inp1 = document.querySelector('#inp1');
-    let inp2 = document.querySelector('#inp2');
+<input type="text" id="numberInput">
 
-    btn.addEventListener('click', function() {
-        res.textContent = Number(inp1.value) + Number(inp2.value);
+<script>
+    const numberInput = document.getElementById('numberInput');
+
+    numberInput.addEventListener('blur', () => {
+        if (numberInput.value.includes('3')) {
+            console.log('Содержит цифру 3');
+        } else {
+            console.log('Не содержит цифру 3');
+        }
     });
 </script>
 

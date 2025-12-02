@@ -7,20 +7,16 @@
 </head>
 <body>
 
-<input type="number">
-<input type="number">
-<input type="number">
-<button id="btn">click</button>
-<script>
-    let inputs = document.querySelectorAll('input');
-    let btn = document.querySelector('#btn');
+<a href="https://vk.com">Ссылка 1</a>
+<a href="https://ya.ru">Ссылка 2</a>
 
-    btn.addEventListener('click', function() {
-        let sum = 0;
-        inputs.forEach(input => {
-            sum += Number(input.value);
-        });
-        console.log(sum);
+<script>
+    const links = document.querySelectorAll('a');
+
+    links.forEach(link => {
+        if (link.href.startsWith('http://')) {
+            link.textContent += ' →';
+        }
     });
 </script>
 

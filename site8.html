@@ -7,22 +7,17 @@
 </head>
 <body>
 
-<input type="number">
-<input type="number">
-<input type="number">
-<button>click</button>
-<script>
-    let button = document.querySelector('button');
-    let elems = document.querySelectorAll('input');
+<input type="text" id="dateInput">
 
-    button.addEventListener('click', function() {
-        let sum = 0;
-        elems.forEach(elem => {
-            sum += Number(elem.value);
-        });
-        console.log(sum);
+<script>
+    const dateInput = document.getElementById('dateInput');
+
+    dateInput.addEventListener('blur', () => {
+        const [day, month, year] = dateInput.value.split('.');
+        dateInput.value = `${year}-${month}-${day}`;
     });
 </script>
+
 
 </body>
 </html>

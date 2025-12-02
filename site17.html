@@ -7,16 +7,20 @@
 </head>
 <body>
 
+<input type="text" id="clickCount">
+<p>1</p>
 <p>2</p>
-<p>3</p>
 
 <script>
+    const clickCountInput = document.getElementById('clickCount');
     const paragraphs = document.querySelectorAll('p');
+
+    let count = 0;
 
     paragraphs.forEach(para => {
         para.addEventListener('click', () => {
-            const number = +para.textContent;
-            para.textContent = number * number;
+            count++;
+            clickCountInput.value = count;
         });
     });
 </script>

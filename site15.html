@@ -7,20 +7,16 @@
 </head>
 <body>
 
-<input id="inp">
+<input type="text" id="dateInput">
 
 <script>
-    let inp = document.querySelector('#inp');
+    const dateInput = document.getElementById('dateInput');
 
-    inp.addEventListener('blur', function() {
-        let digits = this.value.split('');
-        let sum = 0;
-
-        digits.forEach(digit => {
-            sum += Number(digit);
-        });
-
-        console.log(sum);
+    dateInput.addEventListener('blur', () => {
+        const [day, month, year] = dateInput.value.split('.');
+        const date = new Date(year, month - 1, day);
+        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        console.log(days[date.getDay()]);
     });
 </script>
 

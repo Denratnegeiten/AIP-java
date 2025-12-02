@@ -7,16 +7,20 @@
 </head>
 <body>
 
-<p>text</p>
-<button>click</button>
-<script>
-    let button = document.querySelector('button');
-    let elem = document.querySelector('p');
+<input type="text" id="numberInput">
 
-    button.addEventListener('click', function() {
-        elem.innerHTML = '<b>' + elem.innerHTML + '</b>';
+<script>
+    const numberInput = document.getElementById('numberInput');
+
+    numberInput.addEventListener('blur', () => {
+        let sum = 0;
+        for (let digit of numberInput.value) {
+            sum += +digit;
+        }
+        console.log(sum);
     });
 </script>
+
 
 </body>
 </html>
