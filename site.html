@@ -7,15 +7,29 @@
 </head>
 <body>
 
-    <input type="checkbox" id="checkbox">
-    <input id="button" type="button" value="Переключить состояние">
+    <input type="radio" name="elem" value="1" id="radio1">
+    <label for="radio1">Опция 1</label><br>
+
+    <input type="radio" name="elem" value="2" id="radio2">
+    <label for="radio2">Опция 2</label><br>
+
+    <input type="radio" name="elem" value="3" id="radio3">
+    <label for="radio3">Опция 3</label><br>
+
+    <button id="button">Показать выбранное</button>
+    <p id="output"></p>
 
     <script>
-        let checkbox = document.querySelector('#checkbox');
+        let radios = document.querySelectorAll('input[type="radio"]');
         let button = document.querySelector('#button');
+        let output = document.querySelector('#output');
 
         button.addEventListener('click', function() {
-            checkbox.checked = !checkbox.checked;
+            for (let radio of radios) {
+                if (radio.checked) {
+                    output.textContent = radio.value;
+                }
+            }
         });
     </script>
 
