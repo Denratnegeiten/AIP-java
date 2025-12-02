@@ -5,35 +5,26 @@
     <title>Title</title>
 </head>
 <body>
-<h1>340#1</h1>
-<div id="block">
-    <p>1</p>
-    <p>2</p>
-</div>
+<input id="button1" type="submit" value="Button 1">
+<input id="button2" type="submit" value="Button 2">
+<input id="button3" type="submit" value="Button 3">
 
 <script>
-    let firstParagraph = document.querySelector('#block p');
-    console.log(firstParagraph);
-</script>
+    let button1 = document.querySelector('#button1');
+    let button2 = document.querySelector('#button2');
+    let button3 = document.querySelector('#button3');
 
-<h1>340#2</h1>
-<div class="block">
-    <p>1</p>
-    <p>2</p>
-</div>
+    button1.addEventListener('click', function() {
+        console.log(1);
+    });
 
-<script>
-    let firstParagraph = document.querySelector('.block p');
-    console.log(firstParagraph);
-</script>
+    button2.addEventListener('click', function() {
+        console.log(2);
+    });
 
-<h1>340#3</h1>
-<p class="www">text</p>
-<p class="www">text</p>
-
-<script>
-    let firstParagraph = document.querySelector('.www');
-    console.log(firstParagraph);
+    button3.addEventListener('click', function() {
+        console.log(3);
+    });
 </script>
 </body>
-    </html>
+</html>
