@@ -5,11 +5,13 @@
     <title>Title</title>
 </head>
 <body>
-<img id="image" src="avatar.png">
+<img id="image" src="avatar.png" width="300" height="500">
 
 <script>
-    console.log(document.querySelector('#image').src);
+    let image = document.querySelector('#image');
+    console.log(image.src);
+    console.log(image.width);
+    console.log(image.height);
 </script>
-
 </body>
 </html>
