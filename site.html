@@ -12,19 +12,15 @@
 </head>
 <body>
 
-    <ul>
-        <li>text1</li>
-        <li>text2</li>
-        <li>text3</li>
-        <li>text4</li>
-        <li>text5</li>
-    </ul>
+    <p class="www">elem 1</p>
+    <p class="www">elem 2</p>
+    <p class="www">elem 3</p>
 
     <script>
-        const listItems = document.getElementsByTagName('li'); // Получаем все элементы <li>
+        const elements = document.getElementsByClassName('www'); // Получаем все элементы с классом 'www'
 
-        for (let item of listItems) {
-            item.classList.add('red'); // Добавляем класс, который изменяет цвет текста на красный
+        for (let element of elements) {
+            element.classList.add('red'); // Добавляем класс, который изменяет цвет текста на красный
         }
     </script>
 
