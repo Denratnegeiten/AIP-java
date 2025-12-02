@@ -4,15 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>text</title>
-    <style>
-        #myDiv {
-            background-color: lightblue; /* Начальный цвет фона для удобства */
-        }
-    </style>
 </head>
 <body>
 
-    <div id="myDiv">Пример дива.</div>
+    <div id="myDiv">Пример дива с текстом.</div>
     <button id="myButton">Стилизация дива</button>
 
     <script>
@@ -20,10 +15,10 @@
         const myButton = document.getElementById('myButton');
 
         myButton.addEventListener('click', function() {
-            // Добавляем стили к диву
-            myDiv.style.width = '200px';
-            myDiv.style.height = '100px';
-            myDiv.style.border = '2px solid black';
+            // Устанавливаем стили к диву
+            myDiv.style.fontSize = '20px';         // Размер шрифта
+            myDiv.style.borderTop = '2px solid black'; // Верхняя граница
+            myDiv.style.backgroundColor = 'lightgreen'; // Фоновый цвет
         });
     </script>
 
