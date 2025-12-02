@@ -5,37 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>text</title>
     <style>
-        .red {
-            color: red; /* Красный цвет для текста */
+        .red-border {
+            border: 2px solid red; /* Красная граница */
         }
     </style>
 </head>
 <body>
 
-    <ul id="elem">
-        <li>text</li>
-        <li>text</li>
-        <li>text</li>
-        <li>text</li>
-        <li>text</li>
-    </ul>
+    <div>
+        <ul>
+            <li>text</li>
+            <li>text</li>
+            <li id="elem">text</li>
+            <li>text</li>
+            <li>text</li>
+        </ul>
+    </div>
 
     <script>
         const elem = document.getElementById('elem');
 
-        // Задача 1: Найдите первого потомка и сделайте его текст красного цвета.
-        const firstChild = elem.firstElementChild;
-        firstChild.classList.add('red');
-
-        // Задача 2: Найдите последнего потомка и сделайте его текст красного цвета.
-        const lastChild = elem.lastElementChild;
-        lastChild.classList.add('red');
-
-        // Задача 3: Найдите всех потомков и добавьте им в конец текст '!'.
-        const children = elem.children;
-        for (let child of children) {
-            child.textContent += '!';
-        }
+        // Найдите его родителя и задайте ему красную границу.
+        const parent = elem.parentElement;
+        parent.classList.add('red-border');
     </script>
 
 </body>
