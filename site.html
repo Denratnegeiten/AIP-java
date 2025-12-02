@@ -5,89 +5,110 @@
     <title>Title</title>
 </head>
 <body>
-
-<h1>348#1 и 348#2</h1>
-<input id="elem1" type="email">
-<button id="button1">Вывести тип</button>
-<button id="button2">Поменять тип на submit</button>
-
-<h1>348#3</h1>
-<a id="link" href="https://vk.com">Перейти на сайт</a>
-<button id="button3">Вывести href</button>
-<p id="output"></p>
-
-<h1>348#4</h1>
-<a id="link2" href="https://vk.com">Перейти на сайт</a>
-<button id="button4">Добавить в конец href</button>
-
-<h1>348#5 и 348#6</h1>
-<img id="image1" src="image1.png " width="400">
-<br>
-<p id="image-path"></p>
-<button id="button5">Вывести путь к картинке</button>
-<button id="button6">В атрибут width записать значение 300</button>
-
-<h1>348#7</h1>
-<img id="image2" src="image1.png" width="150">
-<br>
-<button id="button7">Увеличить значение атрибута Width</button>
-
-<h1>348#8</h1>
-<img id="switch-image" src="" width="150">
-<br>
-<button id="button8">Вывести картинку №1</button>
-<button id="button9">Вывести картинку №2</button>
+<h1>349#1</h1>
+<input id="input1">
+<button id="button1">Записать текст</button>
 
 <script>
-    // Задача 348_1
-    let elem1 = document.querySelector('#elem1');
-    document.querySelector('#button1').addEventListener('click', function() {
-        console.log(elem1.type);
-    });
+    let input1 = document.querySelector('#input1');
+    let button1 = document.querySelector('#button1');
 
-    // Задача 348_2
-    document.querySelector('#button2').addEventListener('click', function() {
-        elem1.type = 'submit';
+    button1.addEventListener('click', function() {
+        input1.value = 'Пример текста';
     });
+</script>
+<br>
+<br>
 
-    // Задача 348_3
-    let link = document.querySelector('#link');
-    document.querySelector('#button3').addEventListener('click', function() {
-        document.querySelector('#output').textContent = link.href;
-    });
+<h1>349#2</h1>
+<input id="input2">
+<p id="paragraph2"></p>
+<button id="button2">Записать текст</button>
 
-    // Задача 348_4
-    let link2 = document.querySelector('#link2');
-    document.querySelector('#button4').addEventListener('click', function() {
-        link2.textContent += ` (${link2.href})`;
-    });
+<script>
+    let input2 = document.querySelector('#input2');
+    let paragraph2 = document.querySelector('#paragraph2');
+    let button2 = document.querySelector('#button2');
 
-    // Задача 348_5
-    let image1 = document.querySelector('#image1');
-    document.querySelector('#button5').addEventListener('click', function() {
-        document.querySelector('#image-path').textContent = image1.src;
+    button2.addEventListener('click', function() {
+        paragraph2.textContent = input2.value;
     });
+</script>
+<br>
+<br>
 
-    // Задача 348_6
-    document.querySelector('#button6').addEventListener('click', function() {
-        image1.width = 300;
-    });
+<h1>349#3</h1>
+<input id="input3">
+<input id="input4">
+<button id="button3">Возвести в квадрат</button>
 
-    // Задача 348_7
-    let image2 = document.querySelector('#image2');
-    document.querySelector('#button7').addEventListener('click', function() {
-        image2.width *= 2;
-    });
+<script>
+    let input3 = document.querySelector('#input3');
+    let input4 = document.querySelector('#input4');
+    let button3 = document.querySelector('#button3');
 
-    // Задача 348_8
-    let switchImage = document.querySelector('#switch-image');
-    document.querySelector('#button8').addEventListener('click', function() {
-        switchImage.src = 'image1.png';
+    button3.addEventListener('click', function() {
+        let number = parseFloat(input3.value);
+        input4.value = number * number;
     });
-    document.querySelector('#button9').addEventListener('click', function() {
-        switchImage.src = 'image2.png';
-    });
+</script>
+<br>
+<br>
 
+<h1>349#4</h1>
+<input id="input5">
+<input id="input6">
+<button id="button4">Поменять местами</button>
+
+<script>
+    let input5 = document.querySelector('#input5');
+    let input6 = document.querySelector('#input6');
+    let button4 = document.querySelector('#button4');
+
+    button4.addEventListener('click', function() {
+        let temp = input5.value;
+        input5.value = input6.value;
+        input6.value = temp;
+    });
+</script>
+<br>
+<br>
+
+<h1>349#5</h1>
+<input id="input7">
+<input id="input8">
+<input id="input9">
+<input id="input10">
+<input id="input11">
+<p id="averageParagraph"></p>
+<button id="button5">Вычислить среднее</button>
+
+<script>
+    let inputs = [
+        document.querySelector('#input7'),
+        document.querySelector('#input8'),
+        document.querySelector('#input9'),
+        document.querySelector('#input10'),
+        document.querySelector('#input11')
+    ];
+    let averageParagraph = document.querySelector('#averageParagraph');
+    let button5 = document.querySelector('#button5');
+
+    button5.addEventListener('click', function() {
+        let sum = 0;
+        let count = 0;
+
+        for (let input of inputs) {
+            let value = parseFloat(input.value);
+            if (!isNaN(value)) {
+                sum += value;
+                count++;
+            }
+        }
+
+        let average = sum / count;
+        averageParagraph.textContent = 'Среднее арифметическое: ' + average;
+    });
 </script>
 
 </body>
