@@ -12,11 +12,15 @@
     <script>
         const elem = document.getElementById('elem');
 
-        // Удаляем классы www и zzz
-        elem.classList.remove('www', 'zzz');
+        // Проверяем наличие класса ggg
+        const hasClassGgg = elem.classList.contains('ggg');
 
-        // Выводим все классы элемента в консоль для проверки
-        console.log('Классы элемента после удаления:', elem.classList);
+        // Выводим результат проверки в консоль
+        if (hasClassGgg) {
+            console.log('Элемент содержит класс ggg.');
+        } else {
+            console.log('Элемент не содержит класс ggg.');
+        }
     </script>
 
 </body>
