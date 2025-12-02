@@ -7,46 +7,54 @@
 <body>
 
 <ul>
-    <li>3</li>
-    <li>5</li>
-    <li>7</li>
-    <li>9</li>
-    <li>12</li>
+    <li>2000</li>
+    <li>2004</li>
+    <li>2021</li>
+    <li>2022</li>
+    <li>2025</li>
+    <li>2031</li>
 </ul>
 
 <script>
-    // 361#1
-    let items1 = document.querySelectorAll('li');
+    //Получение всех элементов списка
+    let years = document.querySelectorAll('li');
+    console.log(years);
 
-    for (let item of items1) {
-        item.addEventListener('click', function increase() {
-            this.textContent = Number(this.textContent) + 1;
-        });
+    //Перебор элементов и вывод их по отдельности
+    for (let year of years) {
+        console.log(year);
     }
 
-    // 361#2
-    let items2 = document.querySelectorAll('li');
-
-    for (let item of items2) {
-        item.addEventListener('click', function increaseOnce() {
-            this.textContent = Number(this.textContent) + 1;
-            this.removeEventListener('click', increaseOnce);
-        });
+    //Вывод текста этих элементов
+    for (let year of years) {
+        console.log(year.textContent);
     }
 
-    // 361#3
-    let items3 = document.querySelectorAll('li');
-
-    for (let item of items3) {
-        item.addEventListener('click', function increaseUntil10() {
-            let currentValue = Number(this.textContent);
-            if (currentValue < 10) {
-                this.textContent = currentValue + 1;
-            }
-        });
+    //Функция для расчета суммы цифр числа
+    function sumOfDigits(number) {
+        return String(number).split('').reduce((sum, digit) => sum + Number(digit), 0);
     }
+
+    //Нахождение годов, сумма цифр которых равна 6, и вывод их
+    for (let year of years) {
+        let yearNumber = +year.textContent;
+        if (sumOfDigits(yearNumber) === 6) {
+            console.log(yearNumber);
+        }
+    }
+
+    //Нахождение суммы этих годов и вывод
+    let totalSum = 0;
+
+    for (let year of years) {
+        let yearNumber = +year.textContent;
+        if (sumOfDigits(yearNumber) === 6) {
+            totalSum += yearNumber;
+        }
+    }
+
+    console.log(totalSum);
 </script>
-
 
 </body>
 </html>
